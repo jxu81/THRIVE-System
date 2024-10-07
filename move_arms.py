@@ -1,11 +1,8 @@
-from __future__ import print_function
-import socket
-import subprocess
-import sys
 import time
 from adafruit_servokit import ServoKit
 import busio
 import board
+import subprocess
 
 # Initialize the I2C interface and ServoKit
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -154,8 +151,6 @@ def set_max_volume():
     except subprocess.CalledProcessError as e:
         print(f"Error setting volume: {e}")
 
-# information about the speaker
-# https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT_Raspberry/
 def play_audio(file_path, device="plughw:3,0"):
     try:
         # Command to play the audio file with the specified device
@@ -164,63 +159,56 @@ def play_audio(file_path, device="plughw:3,0"):
     except subprocess.CalledProcessError as e:
         print(f"Error playing audio file: {e}")
 
-
-
 if __name__ == "__main__":
-    # Set speaker
+    # Set the volume to maximum before playing audio
     set_max_volume()
+    # reset_all_servos()
+    # move_servo_in_steps(servo=7, start_angle=150, end_angle=90, step=5, delay=0.1)
+    # time.sleep(1)
+    # move_servo_in_steps(servo=4, start_angle=40, end_angle=180, step=5, delay=0.1)
+    # time.sleep(1)
+    # wave_servo(servo=5, start_angle=120, end_angle=50, step=5, delay=0.1)
+    # time.sleep(1)
 
-    # Socket setup
-    backlog = 1
-    size = 1024
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind(('192.168.50.11', 12345))  # Bind creates one unique address
-    s.listen(backlog)
+    # introduction 
+    # move_servo_in_steps(servo=7, start_angle=150, end_angle=0, step=5, delay=0.1)
+    # time.sleep(1)
+    # wave_servo(servo=8, start_angle=75, end_angle=110, step=5, delay=0.1)
+    # move_servo_in_steps(servo=4, start_angle=40, end_angle=70, step=5, delay=0.1)
+    # audio_file = "THRIVE-System/audio_file_0.wav"  # Specify your audio file path here
+    # play_audio(audio_file)
 
-    print('Waiting for a connection')
 
-    try:
-        while True:
-            connection, client_address = s.accept()
-            print('Connection from', client_address)
-            
-            while True:
-                data = connection.recv(size)
-                if not data:
-                    print('No more data from', client_address)
-                    break
-                
-                print('Received "%s"' % data.decode())
-                
-                # Call the speak function with the appropriate audio file
-                if data.decode() == '0':
-                    move_servo_in_steps(servo=7, start_angle=150, end_angle=0, step=5, delay=0.1)
-                    time.sleep(1)
-                    wave_servo(servo=8, start_angle=75, end_angle=110, step=5, delay=0.1)
-                    move_servo_in_steps(servo=4, start_angle=40, end_angle=70, step=5, delay=0.1)
-                    audio_file = "THRIVE-System/audio_file_0.wav"  # Specify your audio file path here
-                    play_audio(audio_file)
-                elif data.decode() == '1':
-                    move_servo_in_steps(servo=4, start_angle=50, end_angle=80, step=5, delay=0.1)
-                    audio_file = "THRIVE-System/audio_file_1.wav"
-                    play_audio(audio_file)
-                elif data.decode() == '2':
-                    move_servo_in_steps(servo=7, start_angle=150, end_angle=130, step=5, delay=0.1)
-                    audio_file = "THRIVE-System/audio_file_2.wav"
-                    play_audio(audio_file)
-                elif data.decode() == '3':
-                    move_servo_in_steps(servo=7, start_angle=150, end_angle=0, step=5, delay=0.1)
-                    move_servo_in_steps(servo=4, start_angle=40, end_angle=180, step=5, delay=0.1)
-                    time.sleep(1)
-                    move_two_servos_in_steps(servo1=5, start_angle1=90, end_angle1=70,
-                            servo2=8, start_angle2=80, end_angle2=110, step=5, delay=0.1)
-                    audio_file = "THRIVE-System/audio_file_3.wav"
-                    play_audio(audio_file)
-                # Send the acknowledgment back to the client
-                print('Sending data back to the client')
-                connection.sendall(data)
-            
-    finally:
-        print("Closing socket")
-        connection.close()
-        s.close()
+    # talking 
+    # move_servo_in_steps(servo=4, start_angle=50, end_angle=80, step=5, delay=0.1)
+
+    # move_servo_in_steps(servo=7, start_angle=150, end_angle=130, step=5, delay=0.1)
+
+
+    # end
+    move_servo_in_steps(servo=7, start_angle=150, end_angle=0, step=5, delay=0.1)
+    move_servo_in_steps(servo=4, start_angle=40, end_angle=180, step=5, delay=0.1)
+
+    time.sleep(1)
+    move_two_servos_in_steps(servo1=5, start_angle1=90, end_angle1=70,
+                             servo2=8, start_angle2=80, end_angle2=110, step=5, delay=0.1)
+
+
+    # kit.servo[7].angle = 150
+    # kit.servo[7].angle = 10
+    # kit.servo[8].angle = 90
+    # time.sleep(1)
+    # kit.servo[8].angle = 100
+    # # kit.servo[7].angle = None
+    # kit.servo[8].angle = None
+
+    # move_servo_in_steps(servo=5, start_angle=22, end_angle=20, step=1, delay=0.1)
+    # time.sleep(0.5)
+    # move_servo_in_steps(servo=5, start_angle=20, end_angle=25, step=1, delay=0.1)
+    # time.sleep(0.5)
+    # move_servo_in_steps(servo=5, start_angle=25, end_angle=20, step=1, delay=0.1)
+    # move_servo_in_steps(servo=7, start_angle=90, end_angle=150, step=5, delay=0.1)
+    # move_servo_in_steps(servo=9, start_angle=50, end_angle=00, step=5, delay=0.01)
+    # time.sleep(1)
+    
+    # move_servo_continuous(servo=8, start_angle=110, end_angle=80, step=20, delay=0.5)
