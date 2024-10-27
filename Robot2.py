@@ -177,7 +177,8 @@ def play_audio(file_path, device="plughw:3,0"):
 if __name__ == "__main__":
     # Set speaker
     set_max_volume()
-
+    audio_file = "/home/admin/THRIVE-System/hello_world.wav"  # Specify your audio file path here
+    play_audio(audio_file)
     # Socket setup
     backlog = 1
     size = 1024
