@@ -157,8 +157,12 @@ def reset_motors():
 def set_max_volume():
     try:
         # Set the master volume to 100% (maximum volume)
-        subprocess.run(["amixer", "sset", "'Master'", "100%"], check=True)
-        print("Volume set to 100% (maximum).")
+        # subprocess.run(["amixer", "sset", "'Master'", "100%"], check=True)
+        # print("Volume set to 100% (maximum).")
+
+        # Set the pi-hat volume to 100%
+        subprocess.run(["amixer", "-c", "3", "sset", "Speaker", "100%"], check=True)
+        print("Volume set to 100% (maximum) on sound card 3.")
     except subprocess.CalledProcessError as e:
         print(f"Error setting volume: {e}")
 
