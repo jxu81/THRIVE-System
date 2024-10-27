@@ -146,6 +146,14 @@ def move_two_servos_in_steps(servo1, start_angle1, end_angle1, servo2, start_ang
     print(f"Servos {servo1} and {servo2} released.")
 
     
+def reset_motors():
+    kit.servo[4].angle = 0
+    kit.servo[7].angle = 180
+    kit.servo[5].angle = 180
+    kit.servo[8].angle = 0
+    kit.servo[6].angle = 90
+    kit.servo[9].angle = 90
+
 def set_max_volume():
     try:
         # Set the master volume to 100% (maximum volume)
@@ -174,11 +182,11 @@ if __name__ == "__main__":
     backlog = 1
     size = 1024
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind(('192.168.50.11', 12345))  # Bind creates one unique address
+    s.bind(('192.168.1.100', 12345))  # Bind creates one unique address
     s.listen(backlog)
 
     print('Waiting for a connection')
-
+    reset_motors()
     try:
         while True:
             connection, client_address = s.accept()
@@ -194,27 +202,27 @@ if __name__ == "__main__":
                 
                 # Call the speak function with the appropriate audio file
                 if data.decode() == '0':
-                    move_servo_in_steps(servo=7, start_angle=150, end_angle=0, step=5, delay=0.1)
-                    time.sleep(1)
-                    wave_servo(servo=8, start_angle=75, end_angle=110, step=5, delay=0.1)
-                    move_servo_in_steps(servo=4, start_angle=40, end_angle=70, step=5, delay=0.1)
-                    audio_file = "THRIVE-System/audio_file_0.wav"  # Specify your audio file path here
-                    play_audio(audio_file)
+                        move_servo_in_steps(servo=7, start_angle=180, end_angle=20, step=5, delay=0.1)
+                        time.sleep(1)
+                        wave_servo(servo=8, start_angle=5, end_angle=25, step=5, delay=0.1)
+                        move_servo_in_steps(servo=4, start_angle=0, end_angle=20, step=5, delay=0.1)
+                        audio_file = "/home/admin/THRIVE-System/audio_file_0.wav"  # Specify your audio file path here
+                        play_audio(audio_file)
                 elif data.decode() == '1':
-                    move_servo_in_steps(servo=4, start_angle=50, end_angle=80, step=5, delay=0.1)
-                    audio_file = "THRIVE-System/audio_file_1.wav"
+                    move_servo_in_steps(servo=4, start_angle=20, end_angle=45, step=5, delay=0.1)
+                    audio_file = "/home/admin/THRIVE-System/audio_file_1.wav"
                     play_audio(audio_file)
                 elif data.decode() == '2':
-                    move_servo_in_steps(servo=7, start_angle=150, end_angle=130, step=5, delay=0.1)
-                    audio_file = "THRIVE-System/audio_file_2.wav"
+                    move_servo_in_steps(servo=7, start_angle=160, end_angle=135, step=5, delay=0.1)
+                    audio_file = "/home/admin/THRIVE-System/audio_file_2.wav"
                     play_audio(audio_file)
                 elif data.decode() == '3':
-                    move_servo_in_steps(servo=7, start_angle=150, end_angle=0, step=5, delay=0.1)
-                    move_servo_in_steps(servo=4, start_angle=40, end_angle=180, step=5, delay=0.1)
+                    move_two_servos_in_steps(servo1=7, start_angle1=150, end_angle1=30,
+                            servo2=4, start_angle2=30, end_angle2=150, step=5, delay=0.1)
                     time.sleep(1)
-                    move_two_servos_in_steps(servo1=5, start_angle1=90, end_angle1=70,
-                            servo2=8, start_angle2=80, end_angle2=110, step=5, delay=0.1)
-                    audio_file = "THRIVE-System/audio_file_3.wav"
+                    move_servo_in_steps(servo=9, start_angle=140, end_angle=90, step=5, delay=0.1)
+                    move_servo_in_steps(servo=6, start_angle=50, end_angle=90, step=5, delay=0.1)
+                    audio_file = "/home/admin/THRIVE-System/audio_file_3.wav"
                     play_audio(audio_file)
                 # Send the acknowledgment back to the client
                 print('Sending data back to the client')

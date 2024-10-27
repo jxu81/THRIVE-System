@@ -159,6 +159,15 @@ def play_audio(file_path, device="plughw:3,0"):
     except subprocess.CalledProcessError as e:
         print(f"Error playing audio file: {e}")
 
+def reset_motors():
+    kit.servo[4].angle = 0
+    kit.servo[7].angle = 180
+    kit.servo[5].angle = 180
+    kit.servo[8].angle = 0
+    kit.servo[6].angle = 90
+    kit.servo[9].angle = 90
+
+
 if __name__ == "__main__":
     # Set the volume to maximum before playing audio
     set_max_volume()
@@ -169,29 +178,47 @@ if __name__ == "__main__":
     # time.sleep(1)
     # wave_servo(servo=5, start_angle=120, end_angle=50, step=5, delay=0.1)
     # time.sleep(1)
-
+    reset_motors()
+    time.sleep(3)
+    
     # introduction 
-    # move_servo_in_steps(servo=7, start_angle=150, end_angle=0, step=5, delay=0.1)
-    # time.sleep(1)
-    # wave_servo(servo=8, start_angle=75, end_angle=110, step=5, delay=0.1)
-    # move_servo_in_steps(servo=4, start_angle=40, end_angle=70, step=5, delay=0.1)
-    # audio_file = "THRIVE-System/audio_file_0.wav"  # Specify your audio file path here
-    # play_audio(audio_file)
+    move_servo_in_steps(servo=7, start_angle=180, end_angle=20, step=5, delay=0.1)
+    time.sleep(1)
+    wave_servo(servo=8, start_angle=5, end_angle=25, step=5, delay=0.1)
+    move_servo_in_steps(servo=4, start_angle=0, end_angle=20, step=5, delay=0.1)
+    audio_file = "./audio_file_0.wav"  # Specify your audio file path here
+    play_audio(audio_file)
 
 
     # talking 
-    # move_servo_in_steps(servo=4, start_angle=50, end_angle=80, step=5, delay=0.1)
+    # move_servo_in_steps(servo=4, start_angle=20, end_angle=45, step=5, delay=0.1)
 
-    # move_servo_in_steps(servo=7, start_angle=150, end_angle=130, step=5, delay=0.1)
+    # move_servo_in_steps(servo=7, start_angle=160, end_angle=135, step=5, delay=0.1)
 
 
     # end
-    move_servo_in_steps(servo=7, start_angle=150, end_angle=0, step=5, delay=0.1)
-    move_servo_in_steps(servo=4, start_angle=40, end_angle=180, step=5, delay=0.1)
-
+    move_two_servos_in_steps(servo1=7, start_angle1=150, end_angle1=30,
+                            servo2=4, start_angle2=30, end_angle2=150, step=5, delay=0.1)
     time.sleep(1)
-    move_two_servos_in_steps(servo1=5, start_angle1=90, end_angle1=70,
-                             servo2=8, start_angle2=80, end_angle2=110, step=5, delay=0.1)
+    move_servo_in_steps(servo=9, start_angle=140, end_angle=90, step=5, delay=0.1)
+    move_servo_in_steps(servo=6, start_angle=50, end_angle=90, step=5, delay=0.1)
+
+
+
+    # reset angle - the default position of the robot angles
+    # kit.servo[4].angle = 0
+    # kit.servo[7].angle = 180
+
+
+    # kit.servo[5].angle = 180
+    # kit.servo[8].angle = 0
+
+
+    # kit.servo[6].angle = 90
+    # kit.servo[9].angle = 90
+
+
+
 
 
     # kit.servo[7].angle = 150
