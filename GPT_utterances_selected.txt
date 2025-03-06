@@ -1,0 +1,103 @@
+1. Introduction utterance in SuperPop: "Hello. My name is Thrive and I will be playing Super Pop with you today. I will ask you to complete a series of tasks and I would love it if you could follow my instructions. When you are ready, please raise both of your hands as high as you can."
+utterances = [
+    "Hello. My name is Thrive and I will be playing Super Pop with you today. I will ask you to complete a series of tasks and I would love it if you could follow my instructions. When you are ready, please raise both of your hands as high as you can.",
+    "Hi there! I'm Thrive, and today we're going to play Super Pop! I'll guide you through some fun tasks, and I’d love for you to follow my instructions. When you're ready, raise both hands as high as you can!",
+    "Hello! My name is Thrive, and I’m super excited to play Super Pop with you today! I have some fun tasks for you, so when you're ready, lift both hands up as high as possible!",
+    "Hey there! I'm Thrive, your game buddy for today! We’re going to play Super Pop, and I’ll give you some fun challenges. Ready? Raise both hands up high!",
+    "Hi! I'm Thrive, and I can't wait to play Super Pop with you! I'll be giving you some fun tasks—when you're ready, reach up high with both hands!",
+    "Hello, my friend! I’m Thrive, and today we’ll play Super Pop together! I’ll guide you through some awesome tasks. If you're ready, stretch both hands up high!",
+    "Hey! I'm Thrive, and I'm thrilled to play Super Pop with you today! I have some cool challenges for you—when you’re ready, raise both hands as high as you can!",
+    "Hi! I'm Thrive, and I’ll be your game buddy today! Super Pop is going to be so much fun! Let’s start—raise your hands high when you're ready!",
+    "Hello! My name is Thrive, and I’m excited to play Super Pop with you! I’ll be giving you instructions—when you’re ready, lift your hands way up high!",
+    "Hey, superstar! I’m Thrive, and we’re going to have a blast playing Super Pop! I’ll guide you through some tasks, so when you’re ready, stretch those hands up high!",
+    "Hi there! I'm Thrive! Today, we’re going to play Super Pop together! Follow my instructions and, when you're ready, raise both hands as high as you can!",
+]
+
+2. Move Faster utterance in SuperPop: "Keep up the good work. Move a little faster."
+
+utterances = [
+    "Keep up the good work. Move a little faster.",
+    "You're doing great! Let's pick up the pace a little!",
+    "Awesome job! Try moving just a bit faster!",
+    "Keep going! Can you speed up a little?",
+    "You're on fire! Let's go a tiny bit quicker!",
+    "Wow, you're doing amazing! Try moving a bit faster!",
+    "Fantastic effort! Let's see if you can go a little quicker!",
+    "Great work! Can you move just a little bit faster?",
+    "You're rocking this! Let’s speed up a tiny bit!",
+    "Keep it up! Try picking up the pace a little!",
+    "You're doing so well! Let's see if you can move a bit faster!",
+    "Amazing energy! Can we speed things up a tiny bit?",
+    "You're crushing it! Try going just a little faster!",
+    "Fantastic! Let’s see if you can move a little quicker!",
+    "Keep up the good work! Can you go a bit faster?",
+    "You're doing great! Let’s try a slightly faster pace!",
+    "Impressive! See if you can speed up just a bit!",
+    "Nice job! Let’s go a little faster this time!",
+    "You're a superstar! Try moving just a bit quicker!",
+    "Wonderful effort! Let’s add a little more speed!",
+    "Great going! Let’s push the pace a tiny bit more!",
+    "You're doing fantastic! Let’s pick up the speed just a little!",
+    "Great job! Can you go just a tiny bit faster?",
+    "Super work! Let’s see if we can move a little quicker!",
+    "You’re Thriveng great progress! Try speeding up a bit!",
+    "Keep it up! Let’s add a little more energy and go faster!",
+    "You're unstoppable! See if you can move just a bit quicker!",
+    "Amazing effort! Let’s push the pace just a little more!",
+    "Way to go! Can we pick up the speed just a tiny bit?",
+    "Keep that momentum going! Let’s move a little faster!",
+    "You're doing so well! Let’s speed things up just a little!"
+]
+
+
+3. Move slower utterance in SuperPop: "Fantastic! Let us move at the exact same speed."
+
+utterances = [
+    "Fantastic! Let us move at the exact same speed.",
+    "Fantastic! Keep moving at this exact speed!",
+    "Great job! Maintain this pace!",
+    "Awesome! Stay at this speed, just like that!",
+    "You're doing great! Keep your movement steady!",
+    "Perfect! Let's continue at this pace!",
+    "Nice work! Keep going at this speed!",
+    "Super! Hold this rhythm steady!",
+    "Wonderful! Maintain this exact speed!",
+    "You're crushing it! Keep up this steady pace!",
+    "Excellent! Stay at this same speed!",
+    "Amazing work! Keep moving just like this!",
+    "You're doing fantastic! No need to speed up or slow down!",
+    "Keep going! Stay right at this pace!",
+    "That's it! Keep your movement smooth and steady!",
+    "Great effort! Let’s keep this exact rhythm!",
+    "You're nailing it! Stick with this speed!",
+    "Stay strong! Keep this pace steady!",
+    "Well done! Keep your movement just like this!",
+    "Awesome work! Let’s keep this same speed!",
+    "You’ve got it! Maintain this steady pace!",
+    "Perfect speed! Just keep moving like this!",
+    "You're a superstar! Keep the same rhythm!",
+    "Brilliant! Keep up this perfect pace!",
+    "Just right! Stay steady at this speed!",
+    "You're doing so well! Keep your movements at this tempo!",
+    "Keep rocking! No need to change your speed!",
+    "Way to go! Keep your pace just like this!",
+    "You're on fire! Maintain this awesome speed!",
+    "You’ve got the rhythm! Keep it just like this!",
+    "Steady and strong! Keep moving just like that!"
+]
+
+4. Game End utterance in SuperPop: "Fantastic! Wow! Good game. Let us play another one."
+
+utterances = [
+    "Fantastic! Wow! Good game. Let us play another one.",
+    "Fantastic! Wow! That was a great game! Let’s play another one!",
+    "Awesome job! That was so much fun! Ready for another round?",
+    "You did amazing! What a great game! Let’s go again!",
+    "Wow! That was fantastic! How about another game?",
+    "Great work! You rocked that game! Let’s play again!",
+    "Super effort! That was fun! Want to play one more?",
+    "Amazing! You’re so good at this! Let’s do another game!",
+    "That was incredible! Let’s go for another round!",
+    "Woohoo! You did awesome! Let’s play again!",
+    "Nice job! What a fun game! How about another one?",
+]
