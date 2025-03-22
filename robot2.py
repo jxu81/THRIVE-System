@@ -104,9 +104,9 @@ def move_servo_in_steps(servo, start_angle, end_angle, step=5, delay=0.1):
     kit.servo[servo].angle = end_angle
     print(f"Servo {servo} reached the final angle: {end_angle} degrees.")
 
-    # Release the servo (optional)
-    kit.servo[servo].angle = None
-    print(f"Servo {servo} released.")
+    # # Release the servo (optional)
+    # kit.servo[servo].angle = None
+    # print(f"Servo {servo} released.")
 
 def move_two_servos_in_steps(servo1, start_angle1, end_angle1, servo2, start_angle2, end_angle2, step=5, delay=0.1):
     # Determine the direction of movement for both servos

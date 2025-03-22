@@ -1,0 +1,2 @@
+echo "Hello. My name is Maki and I will be playing SuperPop with you today. I will ask you to complete a series of tasks and I would love it if you could follow my instructions. " | sudo text2wave -eval "(voice_cmu_us_clb_cg)" -o clb.wav
+echo "Hello. My name is Maki and I will be playing SuperPop with you today. I will ask you to complete a series of tasks and I would love it if you could follow my instructions. " | sudo text2wave -eval "(voice_cmu_us_slt_cg)" -o slt.wav
