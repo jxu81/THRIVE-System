@@ -55,6 +55,11 @@ Wants=network-online.target
 [Service]
 ExecStart=/bin/bash /home/admin/THRIVE-System/service/robot_ready.sh
 Type=simple
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+User=admin
+Group=audio
+Restart=on-failure
+RestartSec=1 
 
 [Install]
 WantedBy=multi-user.target
