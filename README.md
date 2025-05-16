@@ -30,18 +30,22 @@ sudo systemctl status robot2.service
 
 ## setup static ip address
 admin@raspberrypi:~ $ nmcli connection show
+
+You should see output like:
 NAME                UUID                                  TYPE      DEVICE 
 preconfigured       bab1e090-17e1-417d-bbee-9f67344bf3d7  wifi      wlan0  
 lo                  1742d74f-ea92-4767-9e5e-b31860520e96  loopback  lo     
 Wired connection 1  a537414c-649c-34ab-bb22-70d57162342b  ethernet  --     
 
+Modify the network connection with the desired static IP:
 admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.addresses 192.168.1.200/24
 admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.gateway 192.168.1.1
 admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.dns "8.8.8.8 8.8.4.4"
 admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.method manual
+
 admin@raspberrypi:~ $ ip -a
 
-
+sudo reboot
 
 # Instructions for Automatically Running `robot_ready.sh` on Boot
 
