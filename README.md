@@ -47,6 +47,12 @@ admin@raspberrypi:~ $ ip -a
 
 sudo reboot
 
+# Setup Environment
+cd THRIVE-System
+python3 -m venv myenv
+source myenv/bin/activate
+pip install -r requirements.txt
+
 # Instructions for Automatically Running `robot_ready.sh` on Boot
 
 sudo nano /etc/systemd/system/robot_ready.service
@@ -68,7 +74,18 @@ RestartSec=1
 [Install]
 WantedBy=multi-user.target
 
+
+# then run the following
 sudo systemctl enable robot_ready.service
 sudo systemctl start robot_ready.service
 
 sudo reboot
+
+# reload and try again
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable robot_ready.service
+sudo systemctl start robot_ready.service
+
+# For debug, use below to print the log
+journalctl -u robot_ready.service --no-pager -n 50

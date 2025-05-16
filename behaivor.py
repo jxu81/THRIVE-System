@@ -181,55 +181,52 @@ def random_celebrate():
     random.choice(list(poses.values()))()
     
 if __name__ == "__main__":
-    # for servo in [4, 5, 6, 7, 8, 9]:
-    #     kit.servo[servo].angle = None
-
     reset_motors()
     time.sleep(1)
     say()
-    # time.sleep(5)
+    time.sleep(5)
 
-    # reset_motors()
-    # time.sleep(1)
-    # pose1()
-    # time.sleep(5)
+    reset_motors()
+    time.sleep(1)
+    pose1()
+    time.sleep(5)
 
-    # reset_motors()
-    # time.sleep(1)
-    # pose2()
-    # time.sleep(5)
+    reset_motors()
+    time.sleep(1)
+    pose2()
+    time.sleep(5)
 
-    # reset_motors()
-    # time.sleep(1)
-    # pose3()
-    # time.sleep(5)
+    reset_motors()
+    time.sleep(1)
+    pose3()
+    time.sleep(5)
 
-    # reset_motors()
-    # time.sleep(1)
-    # pose4()
-    # time.sleep(5)
+    reset_motors()
+    time.sleep(1)
+    pose4()
+    time.sleep(5)
 
-    # reset_motors()
-    # time.sleep(1)
-    # pose5()
-    # time.sleep(5)
-
-
-    # reset_motors()
-    # time.sleep(1)
-    # pose6()
-    # time.sleep(5)
+    reset_motors()
+    time.sleep(1)
+    pose5()
+    time.sleep(5)
 
 
-    # reset_motors()
-    # time.sleep(1)
-    # pose7()
-    # time.sleep(5)
+    reset_motors()
+    time.sleep(1)
+    pose6()
+    time.sleep(5)
 
 
-    # reset_motors()
-    # time.sleep(1)
-    # pose8()
-    # time.sleep(5)
+    reset_motors()
+    time.sleep(1)
+    pose7()
+    time.sleep(5)
 
+
+    reset_motors()
+    time.sleep(1)
+    pose8()
+    time.sleep(5)
+    reset_motors()
     
