@@ -89,3 +89,11 @@ sudo systemctl start robot_ready.service
 
 # For debug, use below to print the log
 journalctl -u robot_ready.service --no-pager -n 50
+
+
+
+## 
+THRIVE #1 and #2 -- Azure Kinect
+THRIVE #3 -- Robot (192.168.1.200) (old fan and speaker)
+THRIVE #5 -- Robot (192.168.1.100)
+
