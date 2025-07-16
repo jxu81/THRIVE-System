@@ -22,11 +22,6 @@
 10. Click **Start Robot** to begin the interaction.
 
 
-### setup new robot
-sudo nano /etc/systemd/system/robot2.service
-sudo systemctl start robot2.service
-sudo systemctl status robot2.service
-
 
 ## setup static ip address
 admin@raspberrypi:~ $ nmcli connection show
@@ -52,6 +47,8 @@ cd THRIVE-System
 python3 -m venv myenv
 source myenv/bin/activate
 pip install -r requirements.txt
+
+change the IP address of the robot in run_robot.py
 
 # Instructions for Automatically Running `robot_ready.sh` on Boot
 
@@ -96,8 +93,8 @@ journalctl -u robot_ready.service --no-pager -n 50
 THRIVE #1 and #2 -- Azure Kinect
 THRIVE #4 -- SuperPop
 
-THRIVE #3 -- Robot (192.168.1.200) (old fan and speaker)
+THRIVE #3 -- Robot (192.168.1.200) (old fan and speaker)  --> 102
 THRIVE #5 -- Robot (192.168.1.100)
-THRIVE #6 -- Robot (192.168.1.300)
+THRIVE #6 -- Robot (192.168.0.101)
 
 
