@@ -94,6 +94,10 @@ journalctl -u robot_ready.service --no-pager -n 50
 
 ## 
 THRIVE #1 and #2 -- Azure Kinect
+THRIVE #4 -- SuperPop
+
 THRIVE #3 -- Robot (192.168.1.200) (old fan and speaker)
 THRIVE #5 -- Robot (192.168.1.100)
+THRIVE #6 -- Robot (192.168.1.300)
+
 
