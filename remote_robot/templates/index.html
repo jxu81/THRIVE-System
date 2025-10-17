@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Control Panel</title>
+</head>
+<body style="font-family:sans-serif; text-align:center;">
+  <h2>🎥 Video Controller</h2>
+  <button onclick="send('1')">Say</button>
+  <button onclick="send('2')">Celebrate</button>
+  <button onclick="send('3')">Say</button>
+  <button onclick="send('0')">Hello</button>
+
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+  <script>
+    const socket = io();
+    function send(cmd) {
+      socket.emit('command', cmd);
+      console.log("Sent command:", cmd);
+    }
+  </script>
+</body>
+</html>
