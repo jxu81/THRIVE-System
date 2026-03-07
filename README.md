@@ -93,8 +93,11 @@ journalctl -u robot_ready.service --no-pager -n 50
 THRIVE #1 and #2 -- Azure Kinect
 THRIVE #4 -- SuperPop
 
-THRIVE #3 -- Robot (192.168.1.200) (old fan and speaker)  --> 102
-THRIVE #5 -- Robot (192.168.1.100)
-THRIVE #6 -- Robot (192.168.0.101)
+THRIVE #3 -- Robot 1 (192.168.1.200) (old fan and speaker)  --> 102 
+THRIVE #5 -- Robot 2 (192.168.1.100)
+THRIVE #6 -- Robot 3 (192.168.0.101)
 
-
+Computer ?? - Camera #?? - Robot #1
+Computer #3 - Camera #3 - Robot #2 - Router #2 Linksys-00605 (192.168.1.100)
+Computer #5 - Camera #4 - Robot #3 - TPLink-1AC6 (192.168.0.101)
+Computer ?? - Camera #?? - Robot #1
