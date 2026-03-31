@@ -10,17 +10,19 @@ VIDEO_BASE = Path(r"C:\Jin\THRIVE-System\remote_robot\videos")
 AUDIO_BASE = Path(r"C:\Jin\THRIVE-System\audio_files")
 
 VIDEOS = {
-    "0": str(VIDEO_BASE / "Hello.mp4"),
-    "1": str(VIDEO_BASE / "Say.mp4"),
+    "0": str(VIDEO_BASE / "Standby.mp4"),
+    "1": str(VIDEO_BASE / "Hello.mp4"),
     "2": str(VIDEO_BASE / "Say.mp4"),
-    "3": str(VIDEO_BASE / "Celebrate.mp4"),
+    "3": str(VIDEO_BASE / "Say.mp4"),
+    "4": str(VIDEO_BASE / "Celebrate.mp4"),
 }
 
 AUDIO_DIRS = {
-    "0": AUDIO_BASE / "intro",
-    "1": AUDIO_BASE / "faster",
-    "2": AUDIO_BASE / "same",
-    "3": AUDIO_BASE / "end"
+    "0": AUDIO_BASE / "",
+    "1": AUDIO_BASE / "intro",
+    "2": AUDIO_BASE / "faster",
+    "3": AUDIO_BASE / "same",
+    "4": AUDIO_BASE / "end"
 }
 
 STANDBY = "0"
