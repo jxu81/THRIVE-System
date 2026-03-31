@@ -5,8 +5,7 @@ This document tracks the current configuration and deployment status of all THRI
 ***
 
 ## 🤖 THRIVE with Robot System
-
-These units are fully integrated with robotic arms and dedicated network routing.
+Each system is uniquely paired with a Computer ID, Camera ID, Robot ID, and Router ID.
 
 | System ID  | Computer ID | Camera ID | Robot ID | Router ID | Network & IP                    | Status                                                                                  |
 | :--------- | :---------: | :-------: | :------: | :-------: | :------------------------------ | :-------------------------------------------------------------------------------------- |
@@ -18,8 +17,6 @@ These units are fully integrated with robotic arms and dedicated network routing
 ***
 
 ## 📷 Camera Only System
-
-These units are designated for vision-specific tasks and do not include robotic hardware.
 
 | System ID  | Computer ID | Camera Type  | Notes                    | Status                                                                       |
 | :--------- | :---------: | :----------- | :----------------------- | :--------------------------------------------------------------------------- |
