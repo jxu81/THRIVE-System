@@ -33,10 +33,15 @@ lo                  1742d74f-ea92-4767-9e5e-b31860520e96  loopback  lo
 Wired connection 1  a537414c-649c-34ab-bb22-70d57162342b  ethernet  --     
 
 Modify the network connection with the desired static IP:
-admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.addresses 192.168.1.200/24
+sudo nmcli connection modify "TP-Link_2110" ipv4.addresses 192.168.0.106/24
+sudo nmcli connection modify "TP-Link_2110" ipv4.gateway 192.168.1.1
+sudo nmcli connection modify "TP-Link_2110" ipv4.dns "8.8.8.8 8.8.4.4"
+sudo nmcli connection modify "TP-Link_2110" ipv4.method manual
+
+<!-- 
 admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.gateway 192.168.1.1
 admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.dns "8.8.8.8 8.8.4.4"
-admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.method manual
+admin@raspberrypi:~ $ sudo nmcli connection modify "preconfigured" ipv4.method manual -->
 
 admin@raspberrypi:~ $ ip -a
 
