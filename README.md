@@ -23,6 +23,18 @@
 
 
 
+## Running Remote Mode (Unity Robot Video/Audio)
+
+Remote mode lets the Unity game trigger the on-screen robot video/audio reactions (Hello, Say, Celebrate, Standby) by sending commands to `remote_robot/video_server.py` over the network.
+
+1. On the PC running the robot's video/audio display, start the video server first by double-clicking **`remote_robot/dist/video_server.exe`**. A console window should open and a Standby video should start playing.
+   - If you don't have the exe built yet, you can instead run `python remote_robot/video_server.py` from the project's `.venv`.
+   - Windows Firewall may prompt to allow the app on first run — click **Allow**, since it needs to listen for incoming connections.
+2. Note the PC's IP address shown in the console output (e.g. `Running on http://<ip>:12345`) — Unity needs this to connect.
+3. Open the Unity game and make sure it's configured to send commands to that PC's IP on TCP port **23456**.
+4. Run the Unity game as normal. As the game sends commands, the video server will play the matching video (muted) together with a random matching audio clip, then return to Standby when finished.
+5. To stop remote mode, close the `video_server.exe` console window (or press **Ctrl+C** if running from `python`).
+
 ## setup static ip address
 admin@raspberrypi:~ $ nmcli connection show
 
@@ -93,17 +105,4 @@ sudo systemctl start robot_ready.service
 journalctl -u robot_ready.service --no-pager -n 50
 
 
-
-## 
-THRIVE #1 and #2 -- Azure Kinect
-THRIVE #4 -- SuperPop
-
-THRIVE #3 -- Robot 1 (192.168.1.200) (old fan and speaker)  --> 102 
-THRIVE #5 -- Robot 2 (192.168.1.100)
-THRIVE #6 -- Robot 3 (192.168.0.101)
-
-Computer ?? - Camera #?? - Robot #1 - Router #1 - Linsys-01428 (192.168.1.200)
-Computer #3 - Camera #3 - Robot #2 - Router #2 Linksys-00605 (192.168.1.100)
-Computer #5 - Camera #4 - Robot #3 - Router #3 TPLink-1AC6 (192.168.0.101)
-Computer ?? - Camera #?? - Robot #4 - Router #4 TPLink-2053 (192.168.0.102)
 

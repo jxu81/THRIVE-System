@@ -39,7 +39,7 @@ STANDBY = "4"
 # Flask + SocketIO setup
 # ============================================================
 app = Flask(__name__)
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 
 # ============================================================
 # VLC setup (video muted)
@@ -153,7 +153,7 @@ def tcp_server():
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     s.bind((TCP_HOST, TCP_PORT))
     s.listen(1)
-    print(f"🎮 TCP server listening for Unity on {TCP_HOST}:{TCP_PORT}")
+    print(f"TCP server listening for Unity on {TCP_HOST}:{TCP_PORT}")
 
     while True:
         conn, addr = s.accept()
