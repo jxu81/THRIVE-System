@@ -10,22 +10,30 @@ VIDEO_BASE = Path(r"C:\Jin\THRIVE-System\remote_robot\videos")
 AUDIO_BASE = Path(r"C:\Jin\THRIVE-System\audio_files")
 
 VIDEOS = {
-    "0": str(VIDEO_BASE / "Standby.mp4"),
-    "1": str(VIDEO_BASE / "Hello.mp4"),
+    "0": str(VIDEO_BASE / "Hello.mp4"),
+    "1": str(VIDEO_BASE / "Say.mp4"),
     "2": str(VIDEO_BASE / "Say.mp4"),
-    "3": str(VIDEO_BASE / "Say.mp4"),
-    "4": str(VIDEO_BASE / "Celebrate.mp4"),
+    "3": str(VIDEO_BASE / "Celebrate1.mp4"),  # placeholder; resolved randomly at play time
+    "4": str(VIDEO_BASE / "Standby.mp4"),
 }
+
+CELEBRATE_VIDEOS = [str(VIDEO_BASE / f"Celebrate{i}.mp4") for i in range(1, 8)]
+
+def get_video_path(cmd):
+    """Return the video path for a command, picking a random Celebrate clip for '3'."""
+    if cmd == "3":
+        return random.choice(CELEBRATE_VIDEOS)
+    return VIDEOS[cmd]
 
 AUDIO_DIRS = {
-    "0": AUDIO_BASE / "",
-    "1": AUDIO_BASE / "intro",
+    "0": AUDIO_BASE / "intro",
+    "1": AUDIO_BASE / "same",
     "2": AUDIO_BASE / "faster",
-    "3": AUDIO_BASE / "same",
-    "4": AUDIO_BASE / "end"
+    "3": AUDIO_BASE / "end",
+    # "4" (standby) intentionally has no audio
 }
 
-STANDBY = "0"
+STANDBY = "4"
 
 # ============================================================
 # Flask + SocketIO setup
@@ -98,11 +106,12 @@ def handle_command(cmd):
 
     # --- play silent video ---
     current = cmd
-    media = instance.media_new(VIDEOS[cmd])
+    video_path = get_video_path(cmd)
+    media = instance.media_new(video_path)
     player.set_media(media)
     player.audio_set_mute(True)
     player.play()
-    print(f"Playing silent video: {VIDEOS[cmd]}")
+    print(f"Playing silent video: {video_path}")
 
     # --- return to standby when finished ---
     def restore():
