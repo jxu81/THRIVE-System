@@ -35,6 +35,24 @@ Remote mode lets the Unity game trigger the on-screen robot video/audio reaction
 4. Run the Unity game as normal. As the game sends commands, the video server will play the matching video (muted) together with a random matching audio clip, then return to Standby when finished.
 5. To stop remote mode, close the `video_server.exe` console window (or press **Ctrl+C** if running from `python`).
 
+### Deploying `video_server.exe` to another laptop
+
+The paths in `video_server.py` are resolved relative to the exe itself, so it's portable as long as this folder structure is kept together:
+
+```
+THRIVE-System/
+├── audio_files/            (intro, same, faster, end)
+└── remote_robot/
+    ├── dist/
+    │   └── video_server.exe
+    └── videos/
+```
+
+To set up a new laptop:
+1. Copy the `remote_robot` folder (including `dist/` and `videos/`) and the `audio_files` folder to the new laptop, keeping them siblings as shown above.
+2. Install **VLC media player** (64-bit) on the new laptop — `video_server.exe` depends on it being installed, it isn't bundled.
+3. Run `remote_robot/dist/video_server.exe`. Allow it through Windows Firewall if prompted, and click "Run anyway" if Windows SmartScreen warns about an unrecognized app.
+
 ## setup static ip address
 admin@raspberrypi:~ $ nmcli connection show
 

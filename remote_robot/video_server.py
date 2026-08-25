@@ -1,13 +1,20 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
-import vlc, threading, time, random, os, simpleaudio as sa, socket
+import vlc, threading, time, random, os, simpleaudio as sa, socket, sys
 from pathlib import Path
 
 # ============================================================
-# Paths
+# Paths (portable — resolved relative to this script/exe, not hardcoded)
 # ============================================================
-VIDEO_BASE = Path(r"C:\Jin\THRIVE-System\remote_robot\videos")
-AUDIO_BASE = Path(r"C:\Jin\THRIVE-System\audio_files")
+if getattr(sys, "frozen", False):
+    # Running as a PyInstaller exe from remote_robot/dist/video_server.exe
+    BASE_DIR = Path(sys.executable).resolve().parent.parent
+else:
+    # Running as remote_robot/video_server.py
+    BASE_DIR = Path(__file__).resolve().parent
+
+VIDEO_BASE = BASE_DIR / "videos"
+AUDIO_BASE = BASE_DIR.parent / "audio_files"
 
 VIDEOS = {
     "0": str(VIDEO_BASE / "Hello.mp4"),
