@@ -43,7 +43,7 @@ Remote mode lets the Unity game trigger the on-screen robot video/audio reaction
 It runs [`run_video_server.ps1`](remote_robot/run_video_server.ps1), which:
 1. Checks that **[uv](https://docs.astral.sh/uv/)** (a Python package/environment manager) is installed — if not, it installs it automatically (no admin rights needed).
 2. Checks that **VLC media player** (64-bit) is installed — `python-vlc` is just bindings, VLC itself has to be installed separately.
-3. Runs `uv sync`, which downloads a matching Python version if needed and installs the exact pinned dependencies from `remote_robot/pyproject.toml`/`uv.lock` (Flask, Flask-SocketIO, python-vlc, simpleaudio) into `remote_robot/.venv`.
+3. Runs `uv sync`, which downloads a matching Python version if needed and installs the exact pinned dependencies from `remote_robot/pyproject.toml`/`uv.lock` (Flask, Flask-SocketIO, python-vlc) into `remote_robot/.venv`. Audio playback uses Python's built-in `winsound` module, so there's no extra dependency (or C compiler) needed for that.
 4. Runs `video_server.py`.
 
 If VLC is missing, or `uv sync` fails, it prints guidance and stops rather than failing partway through.
@@ -68,8 +68,6 @@ To set up a new laptop:
 1. Copy the `remote_robot` folder and the `audio_files` folder to the new laptop, keeping them siblings as shown above (`remote_robot/.venv` doesn't need to be copied — it gets created fresh on first run).
 2. Install **VLC media player** (64-bit) from https://www.videolan.org/vlc/download-windows.html. (Python itself doesn't need to be pre-installed — `uv` manages that.)
 3. Double-click `remote_robot/run_video_server.bat`. Allow it through Windows Firewall if prompted.
-
-**If `uv sync` fails mentioning "Microsoft Visual C++ 14.0 or greater is required":** this comes from `simpleaudio`, which only ships prebuilt wheels for old Python versions (3.7/3.8) and has to compile from source on newer ones. Install "Build Tools for Visual Studio" (Desktop development with C++ workload) from https://visualstudio.microsoft.com/visual-cpp-build-tools/, then re-run `run_video_server.bat`.
 
 **If the exe closes immediately on a new laptop (likely antivirus):** this is a common false positive for PyInstaller-built exes — some AV engines flag them as suspicious because similar tools also self-extract files at runtime. The exe is built with `--onedir` (a plain folder of files, no self-extraction) specifically to minimize this, but a particular AV product may still block it. If it still closes:
 - Check the AV's quarantine/threat history (e.g. Windows Security → Protection history) to confirm it was actually blocked, and by what.

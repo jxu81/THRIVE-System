@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
-import vlc, threading, time, random, os, simpleaudio as sa, socket, sys
+import vlc, threading, time, random, os, winsound, socket, sys
 from pathlib import Path
 
 # ============================================================
@@ -65,7 +65,7 @@ player.play()
 current = STANDBY
 
 # ============================================================
-# Play random .wav using simpleaudio
+# Play random .wav using winsound (stdlib, no external dependency)
 # ============================================================
 def play_random_audio(folder_path):
     """Play a random WAV file asynchronously (reliable on Windows)."""
@@ -77,8 +77,7 @@ def play_random_audio(folder_path):
         filename = random.choice(files)
         path = os.path.join(folder_path, filename)
         print(f"Playing external audio: {path}")
-        wave_obj = sa.WaveObject.from_wave_file(path)
-        play_obj = wave_obj.play()  # non-blocking
+        winsound.PlaySound(path, winsound.SND_FILENAME | winsound.SND_ASYNC)
     except Exception as e:
         print(f"Audio playback error: {e}")
 

@@ -213,12 +213,6 @@ wheels = [
 ]
 
 [[package]]
-name = "simpleaudio"
-version = "1.0.4"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/94/1b/4dc29653733202b68c09d9c6ca085cf67ac54859ee860647ef21ac1ff3dc/simpleaudio-1.0.4.tar.gz", hash = "sha256:691c88649243544db717e7edf6a9831df112104e1aefb5f6038a5d071e8cf41d", size = 2042564, upload-time = "2019-11-29T03:56:28.965Z" }
-
-[[package]]
 name = "thrive-remote-robot"
 version = "0.1.0"
 source = { virtual = "." }
@@ -226,7 +220,6 @@ dependencies = [
     { name = "flask" },
     { name = "flask-socketio" },
     { name = "python-vlc" },
-    { name = "simpleaudio" },
 ]
 
 [package.metadata]
@@ -234,7 +227,6 @@ requires-dist = [
     { name = "flask", specifier = "==3.1.2" },
     { name = "flask-socketio", specifier = "==5.5.1" },
     { name = "python-vlc", specifier = "==3.0.21203" },
-    { name = "simpleaudio", specifier = "==1.0.4" },
 ]
 
 [[package]]

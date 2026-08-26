@@ -38,11 +38,7 @@ Write-Host "Syncing dependencies (this can take a minute the first time)..."
 & uv sync
 if ($LASTEXITCODE -ne 0) {
     Write-Host ""
-    Write-Host "ERROR: 'uv sync' failed." -ForegroundColor Red
-    Write-Host "If the error above mentions 'Microsoft Visual C++ 14.0 or greater is required' (from building simpleaudio),"
-    Write-Host "install 'Build Tools for Visual Studio' (Desktop development with C++ workload) from:"
-    Write-Host "https://visualstudio.microsoft.com/visual-cpp-build-tools/"
-    Write-Host "then re-run this script."
+    Write-Host "ERROR: 'uv sync' failed (see the error above)." -ForegroundColor Red
     exit 1
 }
 
