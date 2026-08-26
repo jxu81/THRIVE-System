@@ -7,8 +7,13 @@ from pathlib import Path
 # Paths (portable — resolved relative to this script/exe, not hardcoded)
 # ============================================================
 if getattr(sys, "frozen", False):
-    # Running as a PyInstaller exe from remote_robot/dist/video_server.exe
-    BASE_DIR = Path(sys.executable).resolve().parent.parent
+    # Running as a PyInstaller exe. Search upward for the "videos" folder
+    # since the exe's own folder depth differs between --onefile and --onedir builds.
+    BASE_DIR = Path(sys.executable).resolve().parent
+    for _ in range(4):
+        if (BASE_DIR / "videos").is_dir():
+            break
+        BASE_DIR = BASE_DIR.parent
 else:
     # Running as remote_robot/video_server.py
     BASE_DIR = Path(__file__).resolve().parent

@@ -21,13 +21,16 @@
 9. Click **Next**, and enter the Target Movement Time in the box labeled **Target MT**.
 10. Click **Start Robot** to begin the interaction.
 
-
+## Trouble Shooting
+1) no camera feed, check whether cables and power are connected properly; check firmware/driver
+2) have camera feed but no tracking.
+3) robot not respond: make sure laptop are on the wifi network. use VNC viewer to remotely login the respberry pi check status. both username and password are admin. 
 
 ## Running Remote Mode (Unity Robot Video/Audio)
 
 Remote mode lets the Unity game trigger the on-screen robot video/audio reactions (Hello, Say, Celebrate, Standby) by sending commands to `remote_robot/video_server.py` over the network.
 
-1. On the PC running the robot's video/audio display, start the video server first by double-clicking **`remote_robot/dist/video_server.exe`**. A console window should open and a Standby video should start playing.
+1. On the PC running the robot's video/audio display, start the video server first by double-clicking **`remote_robot/dist/video_server/video_server.exe`**. A console window should open and a Standby video should start playing.
    - If you don't have the exe built yet, you can instead run `python remote_robot/video_server.py` from the project's `.venv`.
    - Windows Firewall may prompt to allow the app on first run — click **Allow**, since it needs to listen for incoming connections.
 2. Note the PC's IP address shown in the console output (e.g. `Running on http://<ip>:12345`) — Unity needs this to connect.
@@ -44,14 +47,21 @@ THRIVE-System/
 ├── audio_files/            (intro, same, faster, end)
 └── remote_robot/
     ├── dist/
-    │   └── video_server.exe
+    │   └── video_server/
+    │       ├── video_server.exe
+    │       └── _internal/   (required — bundled Python/dependencies)
     └── videos/
 ```
 
 To set up a new laptop:
 1. Copy the `remote_robot` folder (including `dist/` and `videos/`) and the `audio_files` folder to the new laptop, keeping them siblings as shown above.
 2. Install **VLC media player** (64-bit) on the new laptop — `video_server.exe` depends on it being installed, it isn't bundled.
-3. Run `remote_robot/dist/video_server.exe`. Allow it through Windows Firewall if prompted, and click "Run anyway" if Windows SmartScreen warns about an unrecognized app.
+3. Run `remote_robot/dist/video_server/video_server.exe`. Allow it through Windows Firewall if prompted, and click "Run anyway" if Windows SmartScreen warns about an unrecognized app.
+
+**If the exe closes immediately on a new laptop (likely antivirus):** this is a common false positive for PyInstaller-built exes — some AV engines flag them as suspicious because similar tools also self-extract files at runtime. The exe is built with `--onedir` (a plain folder of files, no self-extraction) specifically to minimize this, but a particular AV product may still block it. If it still closes:
+- Check the AV's quarantine/threat history (e.g. Windows Security → Protection history) to confirm it was actually blocked, and by what.
+- Add an exclusion for the `remote_robot/dist/video_server` folder in the AV settings.
+- Report it to the AV vendor as a false positive if the above works — it usually gets whitelisted after review.
 
 ## setup static ip address
 admin@raspberrypi:~ $ nmcli connection show
