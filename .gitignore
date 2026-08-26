@@ -1,0 +1,9 @@
+.venv/
+remote_robot/.venv/
+__pycache__/
+*.pyc
+
+# PyInstaller build artifacts (no longer used — see remote_robot/run_video_server.ps1)
+remote_robot/build/
+remote_robot/dist/
+remote_robot/*.spec
