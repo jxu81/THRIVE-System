@@ -12,10 +12,11 @@ How to get the Unity project running, and how to connect it to either a **physic
 ## Getting the project
 
 - **If you're on the Alienware laptop:** the project source is already there at `C:\Jin\KinectGame_FB` — just open it directly in Unity.
-- **Otherwise:** download the project as a `.zip` from Google Drive:
-  https://drive.google.com/file/d/17-hn4JNmXNct6bGhg7TxpWi_hAbIJuXQ/view?usp=sharing
+- **Otherwise:** download the source from the [GitHub releases page](https://github.com/jxu81/THRIVE-System/releases):
+  - **`Stable_20260826`** — the latest version, works with the FB (Femto Bolt) camera.
+  - **`azure_kinect_version_202503`** — an earlier version, works with the Azure Kinect camera.
 
-  If you don't already have access, click **Request access** on that page and wait for it to be granted before downloading. Once downloaded, unzip it and open the resulting folder in Unity.
+  Once downloaded, unzip it and open the resulting folder in Unity.
 
 ## Setting up the camera driver
 
