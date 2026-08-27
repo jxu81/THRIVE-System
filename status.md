@@ -13,8 +13,8 @@ Each system is uniquely paired with a Computer ID, Camera ID, Robot ID, and Rout
 | **SYS-R2** |      #3     |     #3    |    #2    |     #2    | Linksys-00605 (`192.168.1.100`) | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)         |
 | **SYS-R3** |      #5     |     #4    |    #3    |     #3    | TPLink-1AC6 (`192.168.0.101`)   | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)              |
 | **SYS-R4** |     #7     |    #10   |    #4    |     #4    | TPLink-2053 (`192.168.0.104`)   | ![GSU](https://img.shields.io/badge/Status-Ready-success?style=for-the-badge) |
-| **SYS-R5** |     `??`    |   `??`   |    #5    |     #5    | TPLink-1F6C (`192.168.0.105`) | ![Ready](https://img.shields.io/badge/style=for-the-badge)          |
-| **SYS-R6** |     2    |    11   |    #6    |     #6    | TPLink-2110 (`192.168.0.106`) | ![Spelman](https://img.shields.io/badge/Status-Ready-success?style=for-the-badge)         |
+| **SYS-R5** |     `??`    |   `??`   |    #5    |     #5    | TPLink-1F6C (`192.168.0.105`) | ![Setup](https://img.shields.io/badge/Status-Setup-orange?style=for-the-badge)          |
+| **SYS-R6** |     #2    |    #11   |    #6    |     #6    | TPLink-2110 (`192.168.0.106`) | ![Spelman](https://img.shields.io/badge/Status-Ready-success?style=for-the-badge)         |
 | **SYS-R7** |     #6    |    #9   |    #7    |     #7    | TPLink-20E9 (`192.168.0.107`) | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)         |
 
 
@@ -28,9 +28,9 @@ Each system is uniquely paired with a Computer ID, Camera ID, Robot ID, and Rout
 | **SYS-C1** |      #1     | Azure Kinect | Earlier version          | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
 | **SYS-C3** |      #4     |              | Used for legacy SuperPop | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
 | **SYS-C4** |      #7     | Legacy Kinect| Used for legacy SuperPop | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
-| **SYS-C5** |      #10    | Femto Bolt #6|        8/11/26           | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
-| **SYS-C6** |      #11    | Femto Bolt #8|        8/11/26           | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
-| **SYS-C6** |      #12    | Femto Bolt #10|        vTHRIVE          | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
+| **SYS-C5** |      #10 (slow)   | Femto Bolt #6|        8/11/26           | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
+| **SYS-C6** |      #11 (slow)   | Femto Bolt #8|        8/11/26           | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
+| **SYS-C7** |      #12 (Slow)   | Femto Bolt #10|        Virtual THRIVE          | ![Active](https://img.shields.io/badge/Status-Active-blue?style=flat-square) |
 
 ***
 
