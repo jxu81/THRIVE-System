@@ -12,9 +12,9 @@ Each system is uniquely paired with a Computer ID, Camera ID, Robot ID, and Rout
 | **SYS-R1** |     #9    |    #7   |    #1    |     #1    | Linksys-01428 (`192.168.1.200`) | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)         |
 | **SYS-R2** |      #3     |     #3    |    #2    |     #2    | Linksys-00605 (`192.168.1.100`) | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)         |
 | **SYS-R3** |      #5     |     #4    |    #3    |     #3    | TPLink-1AC6 (`192.168.0.101`)   | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)              |
-| **SYS-R4** |     #7     |    #10   |    #4    |     #4    | TPLink-2053 (`192.168.0.104`)   | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge) |
+| **SYS-R4** |     #7     |    #10   |    #4    |     #4    | TPLink-2053 (`192.168.0.104`)   | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)|
 | **SYS-R5** |     `??`    |   `??`   |    #5    |     #5    | TPLink-1F6C (`192.168.0.105`) | ![Setup](https://img.shields.io/badge/Status-Setup-orange?style=for-the-badge)          |
-| **SYS-R6** |     #2    |    #11   |    #6    |     #6    | TPLink-2110 (`192.168.0.106`) | ![GSU](https://img.shields.io/badge/Status-Ready-success?style=for-the-badge)         |
+| **SYS-R6** |     #2    |    #11   |    #6    |     #6    | TPLink-2110 (`192.168.0.106`) | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)         |
 | **SYS-R7** |     #6    |    #9   |    #7    |     #7    | TPLink-20E9 (`192.168.0.107`) | ![GSU](https://img.shields.io/badge/Location-GSU-blue?style=for-the-badge)         |
 
 
